@@ -1,0 +1,105 @@
+@import "variables.scss";
+
+@mixin after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@mixin imgContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+@mixin imgAdaptive {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@mixin flexBase {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin gridTwoCol {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@mixin backgroundImage {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin primaryButton {
+  background-color: $primaryOrange;
+  color: $white;
+  font-family: Roboto, TTFirsNeue, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  width: fit-content;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+@mixin buttonNull {
+  padding: 0;
+  margin: 0;
+  background: none;
+  box-shadow: none;
+  border: 0;
+  cursor: pointer;
+  appearance: none;
+}
+
+@mixin secondaryButton {
+  background-color: transparent;
+  color: $white;
+  border: 3px solid $primaryOrange;
+  font-family: Roboto, TTFirsNeue, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  width: fit-content;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+@mixin textOverflow {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin searchContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+@mixin menuDropdowm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  opacity: 0;
+  transform: translateX(-600px);
+  z-index: 1;
+}

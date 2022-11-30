@@ -1,0 +1,86 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+html {
+  font-family: TTFirsNeue, Arial, Helvetica, sans-serif;
+}
+
+::-webkit-input-placeholder {
+  color: $shadowGrey;
+}
+
+:-moz-placeholder {
+  color: $shadowGrey;
+}
+
+::-moz-placeholder {
+  color: $shadowGrey;
+}
+
+:-ms-input-placeholder {
+  color: $shadowGrey;
+}
+
+input,
+textarea {
+  font-family: Roboto, TTFirsNeue, Arial, Helvetica, sans-serif;
+}
+
+a {
+  display: block;
+  transition: all .1s ease-in;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1290px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.btn-primary {
+  @include primaryButton;
+}
+.btn-primary:hover {
+  background-color: $shadowOrange;
+}
+.btn-primary:focus {
+  border-color: $darkOrange;
+}
+.btn-primary:active {
+  background-color: $darkOrange;
+}
+
+.btn-secondary {
+  @include secondaryButton;
+}
+.btn-secondary:hover {
+  background-color: $primaryOrange;
+}
+.btn-secondary:focus {
+  background-color: $shadowOrange;
+}
+.btn-secondary:active {
+  background-color: $darkOrange;
+}
+
+@media (max-width: 1350px) {
+  .container {
+    padding: 0 31px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 28px;
+  }
+}

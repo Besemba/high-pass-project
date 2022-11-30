@@ -1,0 +1,251 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.section-mc {
+  padding: 40px 0 70px;
+  background-color: $black;
+}
+.section-mc-heading {
+  margin-bottom: 20px;
+  color: $white;
+}
+.mc {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  &__tables {
+    display: grid;
+    row-gap: 30px;
+    grid-template-rows: repeat(4, 1fr);
+  }
+  &__date {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    p {
+      display: flex;
+      align-items: center;
+      padding-left: 17px;
+      font-family: Roboto, TTFirsNeue, Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: $white;
+      @include backgroundImage;
+      background-size: contain;
+      background-position: left;
+      height: 14px;
+    }
+  }
+  &__calendar {
+    background-image: url("@img/calendar-white.svg");
+  }
+  &__clock {
+    background-image: url("@img/clock.svg");
+  }
+}
+.main-mc {
+  grid-column: 1 / span 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 30px;
+  &__img {
+    @include backgroundImage;
+    background-image: url("@img/photo-camera.jpg");
+  }
+  &__date {
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    @include flexColumn;
+    justify-content: space-between;
+    padding: 20px 0 20px 0;
+  }
+  &__heading {
+    font-size: 24px;
+    color: $white;
+    margin-bottom: 4px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 28px;
+    color: $shadowGrey;
+  }
+
+  &__button {
+    @include primaryButton;
+    padding: 15px 22px 15px 22px;
+  }
+}
+.mc-item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 30px;
+  row-gap: 30px;
+  &__date {
+    margin-bottom: 5px;
+  }
+  &__img {
+    @include backgroundImage;
+    min-height: 60px;
+  }
+  &__img-1 {
+    background-image: url("@img/mc-1.jpg");
+  }
+  &__img-2 {
+    background-image: url("@img/mc-2.jpg");
+  }
+  &__img-3 {
+    background-image: url("@img/mc-3.jpg");
+  }
+  &__img-4 {
+    background-image: url("@img/mc-4.jpg");
+  }
+  &__content {
+    grid-column: 2 / span 3;
+    @include flexColumn;
+    justify-content: center;
+    transform: translateX(-15px);
+  }
+  &__text {
+    font-size: 16px;
+    color: $white;
+  }
+}
+
+@media (max-width: $screen1152) {
+  .section-mc {
+    padding: 44px 0 70px;
+  }
+  .section-mc-heading {
+    margin-bottom: 17px;
+  }
+  .mc {
+    @include flexColumn;
+    gap: 40px;
+  }
+  .main-mc {
+    &__img {
+      min-height: 330px;
+      background-image: url("@img/photo-camera-1024.jpg");
+    }
+  }
+  .mc {
+    &__tables {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: inherit;
+      column-gap: 30px;
+      row-gap: 22px;
+    }
+  }
+  .mc-item {
+    &__content {
+      transform: none;
+    }
+    &__img {
+      min-height: 70px;
+    }
+    &__img-1 {
+      background-image: url("@img/mc-1-1024.jpg");
+    }
+
+    &__img-2 {
+      background-image: url("@img/mc-2-1024.jpg");
+    }
+
+    &__img-3 {
+      background-image: url("@img/mc-3-1024.jpg");
+    }
+
+    &__img-4 {
+      background-image: url("@img/mc-4-1024.jpg");
+    }
+  }
+  .mc-item:nth-child(2) {
+    order: 2;
+  }
+  .mc-item:nth-child(4) {
+    order: 3;
+  } 
+}
+@media (max-width: $screen900) {
+  .main-mc {
+    &__img {
+      background-image: url("@img/photo-camera-768.jpg");
+    }
+  }
+  .mc-item {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+    &__img-1 {
+      background-image: url("@img/mc-1-1024.jpg");
+    }
+
+    &__img-2 {
+      background-image: url("@img/mc-2-1024.jpg");
+    }
+
+    &__img-3 {
+      background-image: url("@img/mc-3-1024.jpg");
+    }
+
+    &__img-4 {
+      background-image: url("@img/mc-4-1024.jpg");
+    }
+    &__content {
+      transform: translate(9px, 2px);
+    }
+  }
+}
+
+@media (max-width: $screen540) {
+  .section-mc {
+    padding: 23px 0 60px 0;
+  }
+  .section-mc-heading {
+    font-size: 18px
+  }
+  .mc {
+    gap: 26px;
+    &__tables {
+      grid-template-columns: initial;
+    }
+    &__tables {
+      row-gap: 31px;
+    }
+  }
+  .main-mc {
+    @include flexColumn;
+    &__img {
+      min-height: 268px;
+      background-image: url("@img/photo-camera-320.jpg");
+    }
+    &__date {
+      margin-bottom: 14px;
+    }
+    &__heading {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+    &__text {
+      margin-bottom: 22px;
+      font-size: 14px;
+      line-height: 25px;
+    }
+    &__button {
+      padding: 12px 21px 9px 19px;
+      font-size: 14px;
+    }
+  }
+  .mc-item {
+    gap: 0;
+    &__img {
+      background-size: initial;
+    }
+    &__content {
+      max-width: 152px;
+      margin-left: 21px;
+    }
+  }
+}

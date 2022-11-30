@@ -1,0 +1,780 @@
+@import "variables.scss";
+@import "mixins.scss";
+.services-content__works {
+	width: 100%;
+}
+.services-section {
+	padding: 55px 0 40px 0;
+}
+
+.services.ui-tabs {
+	padding: 0;
+	font-family: TTFirsNeue, Arial, Helvetica, sans-serif;
+}
+.services.ui-widget-content {
+	border-radius: 0;
+	border: none;
+	background: inherit;
+	color: inherit;
+}
+.services .ui-widget-content .scroll-item a:hover {
+	color: $shadowOrange;
+}
+.services .ui-widget-content .scroll-item a:hover {
+	background-image: url("@img/arrow_shadow-orange.svg");
+}
+.services .ui-widget-content .scroll-item a:focus {
+	color: $shadowOrange;
+}
+.services .ui-widget-content .scroll-item a:active {
+	color: $darkOrange;
+}
+.services.ui-widget-content a {
+	color: #666666;
+}
+.services.ui-widget-content .ui-widget-content {
+	border-radius: 0;
+}
+.services.ui-widget-content .ui-corner-bottom {
+	border: none;
+}
+.services.ui-tabs .ui-tabs-panel {
+	display: grid;
+	padding: 0;
+}
+.services.ui-tabs .ui-tabs-nav {
+	margin: 0;
+	padding: 0;
+}
+.services.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+	padding: 0;
+	font-family: TTFirsNeue, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+}
+.services.ui-tabs .ui-tabs-nav li {
+	margin: 0;
+	padding: 0;
+	background-color: inherit;
+}
+.services.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+	margin: 0;
+	padding: 0;
+	background-color: inherit;
+}
+.services.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+	cursor: pointer;
+}
+.services.ui-tabs .ui-helper-reset {
+	line-height: 1;
+}
+.services-tabs.ui-widget-header {
+	border: none;
+	background: inherit;
+	color: inherit;
+	font-weight: inherit;
+	border-radius: 0;
+}
+.services-tabs.ui-widget-header .ui-state-default {
+	border: none;
+	background: inherit;
+	font-weight: inherit;
+	border-radius: 0;
+}
+.services-tabs.ui-widget-header .ui-state-active > a {
+	color: $primaryOrange;
+}
+.services-tabs.ui-helper-clearfix:before {
+	all: inherit;
+}
+.services-tabs.ui-helper-clearfix:after {
+	all: inherit;
+}
+.services {
+	position: relative;
+	.ui-widget-content .action a {
+		color: $white;
+	}
+	.ui-widget-content .scroll-item a {
+		color: $primaryOrange;
+	}
+}
+.services-top {
+	position: absolute;
+	top: -7px;
+	left: 0;
+}
+.services-heading {
+	margin-bottom: 20px;
+	font-family: TTFirsNeue, Arial, Helvetica, sans-serif;
+}
+.services-tabs {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 32px;
+	min-width: 410px;
+}
+.services-tab {
+	&__indicator {
+		position: absolute;
+		margin-top: 5px;
+		left: 0;
+		height: 4px;
+		background-color: $shadowGrey;
+		width: 100%;
+	}
+	&__indicator:after {
+		@include after;
+		height: 4px;
+		background-color: $primaryOrange;
+		left: 0;
+		right: 0;
+		width: 38%;
+	}
+	&__indicator.left:after {
+		left: 0;
+		animation-duration: 0.2s;
+		animation-timing-function: ease-in;
+		animation-name: slideLeft;
+	}
+	&__indicator.right:after {
+		left: 64%;
+		animation-duration: 0.2s;
+		animation-timing-function: ease-in;
+		animation-name: slideRight;
+	}
+}
+@keyframes slideRight {
+	from {
+		left: 0;
+	}
+
+	to {
+		left: 64%;
+	}
+}
+@keyframes slideLeft {
+	from {
+		left: 64%;
+	}
+
+	to {
+		left: 0;
+	}
+}
+.services-tab:hover {
+	color: #4b4b4b;
+}
+.services-content {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 30px;
+	&__left {
+		padding-top: 93px;
+		grid-column: 1 / span 2;
+	}
+	&__right {
+		@include flexColumn;
+		row-gap: 30px;
+	}
+	&__scroll-base {
+		@include flexColumn;
+		row-gap: 25px;
+	}
+	&__scroll-retouch {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 30px;
+		row-gap: 20px;
+	}
+}
+.scroll-item {
+	display: grid;
+	min-height: 140px;
+	&__heading {
+		@include textOverflow;
+		margin-bottom: 5px;
+		font-size: 24px;
+		color: $black;
+		font-family: Roboto, TTFirsNeue, Arial, Helvetica, sans-serif;
+	}
+
+	&__text {
+		margin-bottom: 14px;
+		font-size: 16px;
+		color: $textGrey;
+		line-height: 22px;
+		font-family: Roboto, TTFirsNeue, Arial, Helvetica, sans-serif;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		padding-right: 25px;
+		font-family: Roboto, TTFirsNeue, Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		font-weight: 700;
+		width: fit-content;
+		height: 13px;
+		color: $primaryOrange;
+		@include backgroundImage;
+		background-size: contain;
+		background-position: right;
+		background-image: url("@img/arrow.svg");
+	}
+}
+.scroll-item-base {
+	grid-template-columns: repeat(8, 1fr);
+	column-gap: 33px;
+	&__img {
+		grid-column: 1 / span 3;
+		@include backgroundImage;
+	}
+	&__img-1 {
+		background-image: url("@img/service-base-1.jpg");
+	}
+	&__img-2 {
+		background-image: url("@img/service-base-2.jpg");
+	}
+	&__img-3 {
+		background-image: url("@img/service-base-3.jpg");
+	}
+	&__img-4 {
+		background-image: url("@img/service-base-4.jpg");
+	}
+	&__img-5 {
+		background-image: url("@img/service-base-5.jpg");
+	}
+
+	&__content {
+		grid-column: 4 / span 5;
+		@include flexColumn;
+		justify-content: center;
+		transform: translate(-4px, -3px);
+	}
+}
+
+.scroll-item-retouch {
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 28px;
+	&__img {
+		grid-column: 1 / span 2;
+		@include backgroundImage;
+	}
+	&__img-1 {
+		background-image: url("@img/service-retouch-1.jpg");
+	}
+	&__img-2 {
+		background-image: url("@img/service-retouch-2.jpg");
+	}
+	&__img-3 {
+		background-image: url("@img/service-retouch-3.jpg");
+	}
+	&__img-4 {
+		background-image: url("@img/service-retouch-4.jpg");
+	}
+	&__img-5 {
+		background-image: url("@img/service-retouch-5.jpg");
+	}
+	&__img-6 {
+		background-image: url("@img/service-retouch-6.jpg");
+	}
+	&__img-7 {
+		background-image: url("@img/service-retouch-7.jpg");
+	}
+	&__img-8 {
+		background-image: url("@img/service-retouch-8.jpg");
+	}
+	&__img-9 {
+		background-image: url("@img/service-retouch-9.jpg");
+	}
+	&__img-10 {
+		background-image: url("@img/service-retouch-6.jpg");
+	}
+
+	&__content {
+		grid-column: 3 / span 2;
+		@include flexColumn;
+	}
+}
+.scroll-item-retouch .scroll-item__heading {
+	margin-bottom: 10px;
+}
+
+.action {
+	@include flexColumn;
+	justify-content: space-between;
+	padding: 20px 0 30px 30px;
+	height: 490px;
+	@include backgroundImage;
+	background-image: url("@img/action.jpg");
+	&__heading {
+		font-size: 36px;
+		font-weight: 700;
+		color: #fff500;
+	}
+
+	&__sub-heading {
+		font-size: 16px;
+		font-weight: 700;
+		color: #fff500;
+		font-family: Roboto, TTFirsNeue, Arial, Helvetica, sans-serif;
+	}
+
+	&__discount {
+		margin-bottom: 9px;
+		width: 116px;
+		height: 59px;
+		@include backgroundImage;
+		background-size: contain;
+		background-image: url("@img/discount.svg");
+	}
+
+	&__text {
+		margin-bottom: 9px;
+		max-width: 218px;
+		font-size: 16px;
+		line-height: 22px;
+		color: $white;
+	}
+
+	&__button {
+		@include primaryButton;
+		padding: 15px 22px 15px 22px;
+	}
+}
+
+.services-works {
+	&__heading {
+		margin-bottom: 12px;
+		font-size: 24px;
+	}
+}
+.services-works-table {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	gap: 30px;
+	&__img {
+		@include imgContainer;
+		min-height: 60px;
+		position: relative;
+	}
+	&__img img {
+		@include imgAdaptive;
+	}
+	&__item {
+		cursor: pointer;
+	}
+}
+
+@media (max-width: $screen1152) {
+	.services-content {
+		grid-template-columns: repeat(8, 1fr);
+		&__left {
+			grid-column: 1 / span 5;
+		}
+		&__right {
+			grid-column: 6 / span 3;
+			gap: 34px;
+		}
+		&__scroll-base {
+			row-gap: 20px;
+		}
+	}
+	.action {
+		background-image: url("@img/action-1024.jpg");
+		&__heading {
+			margin-bottom: 4px;
+		}
+	}
+	.scroll-item {
+		min-height: 184px;
+		&__text {
+			margin-bottom: 0;
+		}
+	}
+	.scroll-item-base {
+		grid-template-columns: repeat(5, 1fr);
+		column-gap: 30px;
+		&__img {
+			grid-column: 1 / span 2;
+		}
+		&__img-1 {
+			background-image: url("@img/service-base-1-1024.jpg");
+		}
+		&__img-2 {
+			background-image: url("@img/service-base-2-1024.jpg");
+		}
+		&__img-3 {
+			background-image: url("@img/service-base-3-1024.jpg");
+		}
+		&__img-4 {
+			background-image: url("@img/service-base-4-1024.jpg");
+		}
+		&__img-5 {
+			background-image: url("@img/service-base-5-1024.jpg");
+		}
+
+		&__content {
+			grid-column: 3 / span 3;
+			transform: translate(1px, 0);
+		}
+	}
+	.scroll-item-base:nth-child(2) {
+		.scroll-item__text {
+			margin-bottom: 15px;
+		}
+	}
+	.scroll-item-base:nth-child(4),
+	.scroll-item-base:nth-child(5) {
+		.scroll-item__text {
+			margin-bottom: 15px;
+		}
+	}
+
+	.scroll-item-retouch {
+		@include flexColumn;
+		row-gap: 13px;
+		&__img {
+			min-height: 140px;
+		}
+		&__img-1 {
+			background-image: url("@img/service-retouch-1-1024.jpg");
+		}
+		&__img-2 {
+			background-image: url("@img/service-retouch-2-1024.jpg");
+		}
+		&__img-3 {
+			background-image: url("@img/service-retouch-3-1024.jpg");
+		}
+		&__img-4 {
+			background-image: url("@img/service-retouch-4-1024.jpg");
+		}
+		&__img-5 {
+			background-image: url("@img/service-retouch-5-1024.jpg");
+		}
+		&__img-6 {
+			background-image: url("@img/service-retouch-6-1024.jpg");
+		}
+		&__img-7 {
+			background-image: url("@img/service-retouch-7-1024.jpg");
+		}
+		&__img-8 {
+			background-image: url("@img/service-retouch-8-1024.jpg");
+		}
+		&__img-9 {
+			background-image: url("@img/service-retouch-9-1024.jpg");
+		}
+		&__img-10 {
+			background-image: url("@img/service-retouch-10-1024.jpg");
+		}
+	}
+	.services-works-table {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+		row-gap: 21px;
+		&__img {
+			min-height: 71px;
+		}
+	}
+	.services-works {
+		&__heading {
+			margin-bottom: 14px;
+		}
+	}
+}
+
+@media (max-width: $screen900) {
+	.services-section {
+		padding: 59px 0 40px 0;
+	}
+	.services.ui-tabs .ui-tabs-panel {
+		@include flexColumn;
+		row-gap: 30px;
+	}
+	.services-content {
+		&__left {
+			@include flexColumn;
+		}
+		&__right {
+			gap: 22px;
+		}
+		&__scroll-base {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 30px;
+			row-gap: 30px;
+		}
+	}
+	.action {
+		position: relative;
+		height: 336px;
+		background-image: url("@img/action-768.jpg");
+		&__discount {
+			position: absolute;
+			top: 20px;
+			right: 30px;
+		}
+	}
+	.scroll-item {
+		min-height: inherit;
+		&__text {
+			max-width: 300px;
+			margin-bottom: 10px;
+			@include textOverflow;
+		}
+	}
+	.scroll-item-base:nth-child(2) {
+		.scroll-item__text {
+			margin-bottom: 10px;
+		}
+	}
+	.scroll-item-base:nth-child(4),
+	.scroll-item-base:nth-child(5) {
+		.scroll-item__text {
+			margin-bottom: 10px;
+		}
+	}
+
+	.scroll-item-base {
+		@include flexColumn;
+		row-gap: 10px;
+		&__img {
+			min-height: 184px;
+			grid-column: 1 / span 2;
+		}
+		&__img-1 {
+			background-image: url("@img/service-base-1-768.jpg");
+		}
+		&__img-2 {
+			background-image: url("@img/service-base-2-768.jpg");
+		}
+		&__img-3 {
+			background-image: url("@img/service-base-3-768.jpg");
+		}
+		&__img-4 {
+			background-image: url("@img/service-base-4-768.jpg");
+		}
+		&__img-5 {
+			background-image: url("@img/service-base-5-768.jpg");
+		}
+
+		&__content {
+			grid-column: 3 / span 3;
+		}
+	}
+
+	.scroll-item-retouch {
+		@include flexColumn;
+		row-gap: 13px;
+		&__img {
+			min-height: 172px;
+		}
+		&__img-1 {
+			background-image: url("@img/service-retouch-1-768.jpg");
+		}
+		&__img-2 {
+			background-image: url("@img/service-retouch-2-768.jpg");
+		}
+		&__img-3 {
+			background-image: url("@img/service-retouch-3-768.jpg");
+		}
+		&__img-4 {
+			background-image: url("@img/service-retouch-4-768.jpg");
+		}
+		&__img-5 {
+			background-image: url("@img/service-retouch-5-768.jpg");
+		}
+		&__img-6 {
+			background-image: url("@img/service-retouch-6-768.jpg");
+		}
+		&__img-7 {
+			background-image: url("@img/service-retouch-7-768.jpg");
+		}
+		&__img-8 {
+			background-image: url("@img/service-retouch-8-768.jpg");
+		}
+		&__img-9 {
+			background-image: url("@img/service-retouch-9-768.jpg");
+		}
+		&__img-10 {
+			background-image: url("@img/service-retouch-10-768.jpg");
+		}
+		&__content {
+			justify-content: space-between;
+			height: 100%;
+		}
+	}
+	.services-works-table {
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		row-gap: 30px;
+	}
+	.services-tabs {
+		min-width: 341px;
+	}
+	.services-tab__indicator.right:after {
+		left: 62%;
+	}
+}
+@media (max-width: $screen540) {
+	.services-section {
+		padding: 44px 0 49px 0;
+	}
+	.services-heading {
+		margin-bottom: 15px;
+		font-size: 18px;
+	}
+	.services.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+		font-size: 14px;
+	}
+	.services-top {
+		width: 100%;
+	}
+	.services-tabs {
+		min-width: 100%;
+	}
+	.services-tab {
+		&__indicator:after {
+			width: 45%;
+		}
+		&__indicator.right:after {
+			left: 55%;
+		}
+	}
+	.scroll-item-base {
+		row-gap: 15px;
+	}
+	.scroll-item-base:nth-child(2) .scroll-item__text {
+		margin-bottom: 28px;
+	}
+	.scroll-item-base:nth-child(5) .scroll-item__text {
+		margin-bottom: 27px;
+	}
+
+	.services-content {
+		&__left {
+			padding-top: 69px;
+		}
+		&__right {
+			gap: 24px;
+		}
+		&__scroll-base {
+			@include flexColumn;
+			row-gap: 32px;
+		}
+		&__scroll-retouch {
+			@include flexColumn;
+			row-gap: 21px;
+		}
+	}
+	.action {
+		height: 422px;
+		background-image: url("@img/action-320.jpg");
+		&__heading {
+			font-size: 30px;
+		}
+		&__sub-heading {
+			font-size: 14px;
+		}
+		&__discount {
+			position: absolute;
+			top: 20px;
+			right: 30px;
+			width: 85px;
+			height: 43px;
+		}
+		&__text {
+			font-size: 14px;
+			font-weight: 18px;
+		}
+		&__button {
+			padding: 11px 19px 9px 19px;
+			font-size: 14px;
+		}
+	}
+	.scroll-item {
+		&__heading {
+			font-size: 16px;
+			max-width: 280px;
+			margin-bottom: 9px;
+		}
+		&__text {
+			font-size: 14px;
+			line-height: 19px;
+		}
+		&__link {
+			font-size: 14px;
+			height: 10px;
+		}
+	}
+	.scroll-item-base {
+		&__img-1 {
+			background-image: url("@img/service-base-1-320.jpg");
+		}
+		&__img-2 {
+			background-image: url("@img/service-base-2-320.jpg");
+		}
+		&__img-3 {
+			background-image: url("@img/service-base-3-320.jpg");
+		}
+		&__img-4 {
+			background-image: url("@img/service-base-4-320.jpg");
+		}
+		&__img-5 {
+			background-image: url("@img/service-base-5-320.jpg");
+		}
+	}
+	.scroll-item-retouch {
+		&__img {
+			min-height: 172px;
+		}
+		&__img-1 {
+			background-image: url("@img/service-retouch-1-1024.jpg");
+		}
+		&__img-2 {
+			background-image: url("@img/service-retouch-2-1024.jpg");
+		}
+		&__img-3 {
+			background-image: url("@img/service-retouch-3-1024.jpg");
+		}
+		&__img-4 {
+			background-image: url("@img/service-retouch-4-1024.jpg");
+		}
+		&__img-5 {
+			background-image: url("@img/service-retouch-5-1024.jpg");
+		}
+		&__img-6 {
+			background-image: url("@img/service-retouch-6-1024.jpg");
+		}
+		&__img-7 {
+			background-image: url("@img/service-retouch-7-1024.jpg");
+		}
+		&__img-8 {
+			background-image: url("@img/service-retouch-8-1024.jpg");
+		}
+		&__img-9 {
+			background-image: url("@img/service-retouch-9-1024.jpg");
+		}
+		&__img-10 {
+			background-image: url("@img/service-retouch-10-1024.jpg");
+		}
+	}
+	.services-works-table {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(8, 1fr);
+		&__img {
+			min-height: 94px;
+		}
+		&__img img {
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+	.services-works__heading {
+		font-size: 18px;
+		margin-bottom: 17px;
+	}
+}

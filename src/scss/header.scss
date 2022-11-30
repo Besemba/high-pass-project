@@ -1,0 +1,460 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+header {
+  @include flexBase;
+  flex-direction: column;
+}
+
+.header-top {
+  @include flexBase;
+  width: 100%;
+  height: 80px;
+  background-color: $black;
+  overflow: hidden;
+  z-index: 2;
+  &__nav {
+    width: 752px;
+    transform: translateX(25px);
+  }
+  .container {
+    @include flexBase;
+    position: relative;
+  }
+  &__contacts {
+    @include flexBase;
+    justify-content: center;
+  }
+  &__phone {
+    display: none;
+  }
+  &__phone a {
+    color: $primaryOrange;
+  }
+  &__right {
+    display: none;
+    align-items: center;
+    gap: 41px;
+  }
+}
+
+.header-logo a:focus {
+  outline: $primaryOrange solid 1px;
+}
+
+.header-bottom {
+  @include flexBase;
+  width: 100%;
+  height: 45px;
+  background-color: $darkGrey;
+  &__nav {
+    background-color: $darkGrey;
+  }
+  &__phone a {
+    color: $white;
+  }
+}
+
+.header-phone {
+  padding-left: 20px;
+  @include backgroundImage;
+  background-image: url("@img/call-white.svg");
+  background-size: contain;
+  background-position: left;
+}
+.header-phone a {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.header-phone:hover a {
+  color: $primaryOrange;
+}
+.header-phone:focus a {
+  color: $shadowOrange;
+}
+.header-phone:active a {
+  color: $darkOrange;
+}
+
+.header-bottom-content {
+  @include flexBase;
+  width: 100%;
+}
+
+.header-menu {
+  display: none;
+}
+.header-top-search {
+  display: none;
+}
+
+.header-bottom-search {
+  &__form {
+    display: flex;
+    align-items: center;
+  }
+  &__link {
+    @include backgroundImage;
+    background-image: url("@img/search-icon.svg");
+    width: 15px;
+    height: 15px;
+    transition: all 0.2s ease;
+  }
+  &__input-container {
+    padding: 5px 0 5px 5px;
+    background: transparent;
+  }
+  &__input {
+    min-width: 170px;
+    font-size: 16px;
+    font-size: 14px;
+    color: $primaryGrey;
+    background: transparent;
+    border-bottom: 1px solid $primaryGrey;
+  }
+}
+.header-icon:not(:last-child) {
+  margin-right: 20px;
+}
+.vk-icon {
+  background-image: url("@img/vk-icon.svg");
+}
+.vk-icon:hover {
+  background-image: url("@img/vk-icon_orange.svg");
+}
+.vk-icon:focus {
+  background-image: url("@img/vk-icon_focus.svg");
+}
+.vk-icon:active {
+  background-image: url("@img/vk-icon_dark-orange.svg");
+}
+.ok-icon {
+  background-image: url("@img/ok-icon.svg");
+}
+.ok-icon:hover {
+  background-image: url("@img/ok-icon_orange.svg");
+}
+.ok-icon:focus {
+  background-image: url("@img/ok-icon_focus.svg");
+}
+.ok-icon:active {
+  background-image: url("@img/ok-icon_dark-orange.svg");
+}
+.inst-icon {
+  background-image: url("@img/inst-icon.svg");
+}
+.inst-icon:hover {
+  background-image: url("@img/inst-icon_orange.svg");
+}
+.inst-icon:focus {
+  background-image: url("@img/inst-icon_focus.svg");
+}
+.inst-icon:active {
+  background-image: url("@img/inst-icon_dark-orange.svg");
+}
+.header-icon {
+  @include backgroundImage;
+  width: 30px;
+  height: 30px;
+}
+
+.header-burger {
+  display: none;
+  position: absolute;
+  top: 83px;
+  width: 20px;
+  height: 18px;
+  z-index: 2;
+  @include backgroundImage;
+  background-image: url("@img/burger.svg");
+  transition: all 0.2s ease-in-out;
+}
+
+.svg-logo-icon-dims {
+  width: 191px;
+  height: 31px;
+  object-fit: cover;
+}
+
+.header-nav {
+  @include flexBase;
+
+  &__item a {
+    padding: 2px 5px;
+    font-size: 16px;
+    color: $white;
+  }
+  &__item a:hover {
+    color: $shadowOrange;
+  }
+  &__item a:focus {
+    background-color: $shadowOrange;
+  }
+  &__item a:active {
+    color: $darkOrange;
+  }
+}
+
+.header-search__link path {
+  fill: none;
+}
+
+.btn-null {
+  @include buttonNull;
+}
+
+.header-bottom-search {
+  &__input:hover {
+    border-color: $primaryOrange;
+  }
+  &__input:focus {
+    border-color: $primaryOrange;
+  }
+  &__input:active {
+    border-color: $primaryOrange;
+  }
+}
+.header-search {
+  &__link {
+    @include backgroundImage;
+    background-image: url("@img/search-icon.svg");
+    width: 25px;
+    height: 25px;
+    transition: all 0.2s ease;
+  }
+  &__link:hover {
+    background-image: url("@img/search-icon_orange.svg");
+  }
+  &__link:focus {
+    outline: $primaryOrange solid 1px;
+  }
+  &__link:active {
+    background-image: url("@img/search-icon_dark-orange.svg");
+  }
+  &__input-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 0 5px 20px;
+    background: $black;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.2s ease-in;
+    transform: translateX(200px);
+    visibility: hidden;
+  }
+  &__input {
+    min-width: 220px;
+    font-size: 16px;
+    color: $primaryGrey;
+    background: transparent;
+    border-bottom: 1px solid $primaryGrey;
+    transition: all 0.1s ease-in;
+  }
+  &__input:hover {
+    border-color: $primaryOrange;
+  }
+  &__input:focus {
+    border-color: $primaryOrange;
+  }
+  &__input:active {
+    border-color: $primaryOrange;
+  }
+  &__button {
+    position: relative;
+    width: 25px;
+    z-index: 2;
+  }
+  &__button {
+    display: none;
+  }
+  &__close {
+    @include backgroundImage;
+    display: none;
+    width: 24px;
+    height: 24px;
+    background-image: url("@img/close.svg");
+    cursor: pointer;
+    border-radius: 100%;
+    transition: all 0.1s ease;
+  }
+  &__close:focus {
+    box-shadow: 0 0 6px 1px $darkGrey;
+  }
+  &__close:hover {
+    box-shadow: 0 0 6px 1px $darkGrey;
+  }
+}
+
+.header-search_active {
+  .search-initial-link {
+    display: none;
+  }
+  .header-search__button {
+    display: block;
+  }
+  .header-search__input-container {
+    transform: translateX(-60px);
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+  }
+  .header-search__close {
+    display: block;
+  }
+}
+
+@media (max-width: $screen1350) {
+  .svg-logo-icon-dims {
+    width: 166px;
+    height: 27px;
+  }
+}
+
+@media (max-width: $screen1152) {
+  .header-top {
+    &__nav {
+      width: 569px;
+      transform: translateX(-2px);
+    }
+  }
+  .header-phone {
+    color: $primaryOrange;
+    background-image: url("@img/call.svg");
+  }
+  .header-phone a {
+    color: $primaryOrange;
+  }
+  .header-bottom-search {
+    &__input-container {
+      padding: 0 0 6px 6px;
+    }
+    &__input {
+      min-width: 197px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 961px) {
+  .header-top {
+    &__contacts {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $screen900) {
+  .container {
+    padding: 0 28px;
+  }
+
+  .header-top {
+    &__nav {
+      display: none;
+    }
+    &__phone {
+      display: block;
+    }
+    &__right {
+      display: flex;
+    }
+  }
+  .header-top-search {
+    display: block;
+  }
+  .header-bottom {
+    display: flex;
+    &__phone {
+      display: none;
+    }
+  }
+  .header-bottom-search {
+    display: none;
+  }
+  .header-menu {
+    display: block;
+  }
+}
+
+@media (max-width: $screen540) {
+  .container {
+    padding: 0 21px;
+  }
+
+  .header-top {
+    height: 70px;
+    &__phone {
+      display: none;
+    }
+  }
+  .header-bottom-content {
+    justify-content: flex-end;
+  }
+  .header-search {
+    &__input {
+      font-size: 14px;
+    }
+    &__link {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .svg-logo-icon-dims {
+    width: 111px;
+    height: 18px;
+  }
+
+  .header-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include flexColumn;
+    justify-content: space-between;
+    padding: 115px 0 36px 18px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $black;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    transform: translateX(-600px);
+    z-index: 1;
+    &__close {
+      position: absolute;
+      top: 70px;
+    }
+  }
+  .header-menu.is-active {
+    opacity: 1;
+    transform: none;
+  }
+  .header-bottom {
+    &__nav {
+      flex-direction: column;
+      background-color: transparent;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+    &__phone {
+      display: block;
+    }
+    &__phone a {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  .header-nav {
+    &__item:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  .header-burger {
+    display: block;
+  }
+  .header-burger.is-active {
+    width: 18px;
+    height: 18px;
+    background-image: url("@img/close.svg");
+  }
+}

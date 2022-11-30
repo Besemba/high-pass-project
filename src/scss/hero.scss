@@ -1,0 +1,206 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.hero-section {
+  padding: 41px 0 40px;
+}
+
+.hero-content {
+  @include gridTwoCol;
+  column-gap: 30px;
+}
+
+.hero-poster {
+  position: relative;
+  @include flexColumn;
+  justify-content: end;
+  padding: 0 0 60px 58px;
+  max-width: 630px;
+  height: 630px;
+  background-image: url("@img/cameraman.jpg");
+  @include backgroundImage;
+
+  p {
+    margin-bottom: 5px;
+    font-family: Roboto, TTFirsNeue, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: $white;
+  }
+
+  h1 {
+    margin-bottom: 19px;
+    color: $white;
+  }
+
+  &__button {
+    padding: 15px 20px 14px 21px;
+  }
+
+  &::after {
+    @include after;
+    content: "#мастеркласс";
+    top: 15px;
+    left: auto;
+    right: 15px;
+    padding: 9px 15px 7px 14px;
+    font-family: Roboto, TTFirsNeue, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: $white;
+    background-color: $black;
+  }
+}
+
+.master-class {
+  @include flexColumn;
+  h2 {
+    margin-bottom: 18px;
+    padding-top: 1px;
+    color: $black;
+    transform: translateY(-9px);
+  }
+}
+
+.master-class {
+  &__works {
+    @include gridTwoCol;
+    grid-template-rows: 51%;
+    gap: 30px;
+    height: 100%;
+  }
+}
+
+.master-class {
+  &__img {
+    @include imgContainer;
+  }
+  img {
+    @include imgAdaptive;
+  }
+}
+
+.master-class {
+  &__img-1 {
+    grid-column: 1 / 3;
+  }
+}
+
+@media (max-width: $screen1152) {
+  .hero-section {
+    padding-top: 40px;
+  }
+  .master-class {
+    h2 {
+      margin-bottom: 18px;
+      transform: translateY(-7px);
+    }
+    &__works {
+      grid-template-rows: 60.5%;
+    }
+  }
+  .hero-poster {
+    p {
+      margin-bottom: 10px;
+    }
+    padding: 0 0 30px 30px;
+    h1 {
+      margin-bottom: 20px;
+      font-size: 34px;
+    }
+  }
+  .hero-poster {
+    height: 616px;
+    background-image: url("@img/cameraman-1024.jpg");
+    a {
+      padding: 14px 19px;
+    }
+  }
+}
+
+@media (max-width: $screen900) {
+  .hero-poster {
+    padding: 0 20px 30px 27px;
+    height: 451px;
+    background-image: url("@img/cameraman-768.jpg");
+    p {
+      margin-bottom: 17px;
+    }
+    h1 {
+      margin-bottom: 21px;
+      line-height: 30.6px;
+    }
+    a {
+      padding: 14px 20px;
+    }
+  }
+  .hero-poster::after {
+    top: 17px;
+  }
+  .master-class h2 {
+    font-size: 22px;
+    margin-bottom: 17px;
+  }
+  .master-class {
+    h2 {
+      transform: translateY(-3px);
+    }
+    &__works {
+      grid-template-rows: 58.5%;
+    }
+  }
+}
+
+@media (max-width: $screen540) {
+  .hero-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-poster {
+    margin-bottom: 35px;
+    padding-left: 28px;
+    height: 422px;
+    background-image: url("@img/cameraman-320.jpg");
+    p {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    h1 {
+      margin-bottom: 13px;
+      max-width: 169px;
+      font-size: 24px;
+      line-height: 26.4px;
+    }
+    a {
+      padding: 10px 21px;
+      font-size: 14px;
+    }
+  }
+  .hero-poster::after {
+    top: 7px;
+    right: 5px;
+    padding: 4px 7px;
+    width: 95px;
+    height: 22px;
+    font-size: 12px;
+  }
+  .master-class {
+    &__works {
+      grid-template-rows: 58%;
+    }
+  }
+  .master-class h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    transform: translate(0);
+  }
+  .master-class {
+    &__img {
+      img {
+        position: initial;
+      }
+    }
+  }
+}
